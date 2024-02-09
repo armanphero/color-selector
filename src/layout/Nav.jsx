@@ -1,11 +1,12 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../configs/firebase.config";
 import useNav from "../hooks/useNav";
+import auth from "../configs/firebase.config";
+import { AuthContext } from "../components/Auth/AuthProvider";
 
 const Nav = () => {
-  const user = null;
+  const {user} = useContext(AuthContext);
 
   const { navbar, navbarLogo } = useNav();
 
